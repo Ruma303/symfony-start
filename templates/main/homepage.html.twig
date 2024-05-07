@@ -12,10 +12,10 @@
     - #}
 
 {# Ereditarietà #}
-{# {{ parent() }} #}
-{# {% block title %} Symfony {% endblock %} #}
 
 {% extends 'layout/base.html.twig' %}
+{% block title %}Symfony {{ parent() }}{% endblock %}
+
 {% block main %}
     <main>
         <h1>Homepage</h1>
