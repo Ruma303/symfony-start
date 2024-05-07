@@ -10,6 +10,9 @@ class MainController extends AbstractController
     #[Route('/')]
     public function homepage() : Response
     {
-        return $this->render('main/homepage.html.twig');
+        $course = 'Symfony';
+        return $this->render('main/homepage.html.twig', [
+                'varToTwig' => $course,
+        ]);
     }
 }
