@@ -1,35 +1,43 @@
 <?php
 
 namespace App\Repository;
-use App\Model\Book;
-use Psr\Log\LoggerInterface;
 
-class BookRepository
+use App\Entity\Book;
+use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\Persistence\ManagerRegistry;
+
+/**
+ * @extends ServiceEntityRepository<Book>
+ */
+class BookRepository extends ServiceEntityRepository
 {
-    public function __construct(private LoggerInterface $logger)
+    public function __construct(ManagerRegistry $registry)
     {
-
+        parent::__construct($registry, Book::class);
     }
 
-    public function getCollection() : array
-    {
-        $this->logger->info('Book collection retrieved');
-        return [
-            new Book(1, 'Book 1', 'Author 1'),
-            new Book(2, 'Book 2', 'Author 2'),
-            new Book(3, 'Book 3', 'Author 3'),
-        ];
-    }
+//    /**
+//     * @return Book[] Returns an array of Book objects
+//     */
+//    public function findByExampleField($value): array
+//    {
+//        return $this->createQueryBuilder('b')
+//            ->andWhere('b.exampleField = :val')
+//            ->setParameter('val', $value)
+//            ->orderBy('b.id', 'ASC')
+//            ->setMaxResults(10)
+//            ->getQuery()
+//            ->getResult()
+//        ;
+//    }
 
-    public function find(int $id) : ?Book
-    {
-        foreach ($this->getCollection() as $book) {
-            if ($book->getId() === $id) {
-                return $book;
-            }
-        }
-        return null;
-    }
+//    public function findOneBySomeField($value): ?Book
+//    {
+//        return $this->createQueryBuilder('b')
+//            ->andWhere('b.exampleField = :val')
+//            ->setParameter('val', $value)
+//            ->getQuery()
+//            ->getOneOrNullResult()
+//        ;
+//    }
 }
-
-
