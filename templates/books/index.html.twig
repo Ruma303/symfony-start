@@ -7,8 +7,10 @@
         <ul>
             {% for book in books %}
                 <li>
-                    Title: <b>{{ book.title }}</b>,
-                    Author: <b>{{ book.author }}</b>
+                    <a href="{{ path('app_books_show', { id: book.id }) }}">
+                        Title: <b>{{ book.title }}</b>,
+                        Author: <b>{{ book.author }}</b>
+                    </a>
                 </li>
             {% endfor %}
         </ul>
