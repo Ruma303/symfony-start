@@ -42,7 +42,7 @@ class ApiBookController extends AbstractController
     //return new JsonResponse(json_encode($this->books));
     //return new JsonResponse(json_encode($this->books));
 
-    #[Route('/', methods: ['GET'])]
+    #[Route('/', methods: ['GET'], name: 'app_books_get_books')]
     public function getBooks(BookRepository $bookRepository): JsonResponse
     {
         $books = $bookRepository->getCollection();
