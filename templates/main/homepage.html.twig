@@ -1,9 +1,11 @@
 {% extends 'layout/base.html.twig' %}
-{% block title %}REST API{% endblock %}
+{% block title %}Asset Mapper{% endblock %}
 
 {% block main %}
     <main>
-        <h1>REST API</h1>
-        <a href="{{ path('app_books_get_books') }}">Go to Api Books</a><br>
+        <h1 class="text-4xl font-bold">Asset Mapper</h1>
+        <a href="{{ path('app_books_get_books') }}"
+            class="text-emerald-500 underline underline-offset-4 text-md">Go to Api Books</a><br>
+        <img src="{{ asset('images/omer-salom-LoijtQXXNhs-unsplash.jpg') }}" class="mt-2">
     </main>
 {% endblock %}
