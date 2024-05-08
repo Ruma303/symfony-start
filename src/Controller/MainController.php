@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Controller;
+
+use App\Repository\BookRepository;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -8,11 +10,12 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class MainController extends AbstractController
 {
     #[Route('/')]
-    public function homepage() : Response
+    public function homepage(BookRepository $bookRepository) : Response
     {
-        $course = 'Symfony';
+        $books = $bookRepository->getCollection();
+
         return $this->render('main/homepage.html.twig', [
-                'varToTwig' => $course,
+                'books' => $books,
         ]);
     }
 }

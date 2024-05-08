@@ -1,0 +1,12 @@
+{% extends 'layout/base.html.twig' %}
+{% block title %}Single Book{% endblock %}
+
+{% block main %}
+    <main>
+        <h1>Single Book</h1>
+        <p>
+            Title: <b>{{ book.title }}</b><br>
+            Author: <b>{{ book.author }}</b>
+        </p>
+    </main>
+{% endblock %}

@@ -1,24 +1,9 @@
-{# <h1>Hello World</h1>
-<p>We are learning {{ varToTwig }}</p>
-
-
-    {% if 10 > 5 %}
-        <p>PHP logics here!</p>
-    {% endif %} #}
-
-    {# Commento #}
-    {# Commento
-        multilinea
-    - #}
-
-{# Ereditarietà #}
-
 {% extends 'layout/base.html.twig' %}
-{% block title %}Symfony {{ parent() }}{% endblock %}
+{% block title %}REST API{% endblock %}
 
 {% block main %}
     <main>
-        <h1>Homepage</h1>
-        <p>Contenuto esteso</p>
+        <h1>REST API</h1>
+        <a href="">Go to Books</a>
     </main>
 {% endblock %}

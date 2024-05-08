@@ -1,0 +1,16 @@
+{% extends 'layout/base.html.twig' %}
+{% block title %}All Books{% endblock %}
+
+{% block main %}
+    <main>
+        <h1>All Books</h1>
+        <ul>
+            {% for book in books %}
+                <li>
+                    Title: <b>{{ book.title }}</b>,
+                    Author: <b>{{ book.author }}</b>
+                </li>
+            {% endfor %}
+        </ul>
+    </main>
+{% endblock %}
