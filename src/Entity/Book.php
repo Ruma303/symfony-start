@@ -22,6 +22,9 @@ class Book
     #[ORM\Column(nullable: true)]
     private ?int $publishYear = null;
 
+    #[ORM\OneToOne(mappedBy: 'book', cascade: ['persist', 'remove'])]
+    private ?BookDetail $bookDetail = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -60,6 +63,20 @@ class Book
     {
         $this->publishYear = $publishYear;
 
+        return $this;
+    }
+
+    public function getBookDetail(): ?BookDetail
+    {
+        return $this->bookDetail;
+    }
+
+    public function setBookDetail(BookDetail $bookDetail): static
+    {
+        if ($bookDetail->getBook() !== $this) {
+            $bookDetail->setBook($this);
+        }
+        $this->bookDetail = $bookDetail;
         return $this;
     }
 }
