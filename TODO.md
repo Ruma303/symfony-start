@@ -1,6 +1,15 @@
 * [ ] Relazioni
 
-  * [ ] 1-1
-  * [ ] 1-n
+  * [X] 1-1
+  * [X] 1-n
   * [ ] n-1
-  * [ ] n-m
+  * [X] n-m
+* [ ] Fixtures
+
+  * [X] Book
+  * [X] Author
+  * [ ] BookDetail
+  * [ ] Genres
+* [ ] Serializzazioni
+
+  * [ ] Gruppi di serializzazioni

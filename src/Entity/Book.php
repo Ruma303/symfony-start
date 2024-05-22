@@ -7,8 +7,8 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity(repositoryClass: BookRepository::class)]
-class Book
+    #[ORM\Entity(repositoryClass: BookRepository::class)]
+    class Book
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -31,6 +31,7 @@ class Book
      * @var Collection<int, Genre>
      */
     #[ORM\ManyToMany(targetEntity: Genre::class, mappedBy: 'books')]
+    // #[ORM\JoinTable(name: 'book_genre')]
     private Collection $genres;
 
     public function __construct()
@@ -51,7 +52,6 @@ class Book
     public function setTitle(string $title): static
     {
         $this->title = $title;
-
         return $this;
     }
 

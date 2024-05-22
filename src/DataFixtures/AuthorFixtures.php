@@ -27,7 +27,6 @@ class AuthorFixtures extends Fixture
         $manager->persist($author4);
 
         $manager->flush();
-
         $this->addReference('author1', $author1);
         $this->addReference('author2', $author2);
         $this->addReference('author3', $author3);

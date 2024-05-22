@@ -25,12 +25,12 @@ class ApiBookController extends AbstractController
         new Book('Book 3', 'Author 3'),
     ]; */
 
-    #[Route('/api/books')]
+    /* #[Route('/api/books')]
     public function getCollection(BookRepository $bookRepository): JsonResponse
     {
         $books = $bookRepository->getCollection();
         return $this->json($books);
-    }
+    } */
 
     //dd($bookRepository);
     //$logger->info('Book collection retrieved');
@@ -49,7 +49,7 @@ class ApiBookController extends AbstractController
         return $this->json($books);
     }
 
-    #[Route('/{id<\d+>}', methods: ['GET'])]
+    /* #[Route('/{id<\d+>}', methods: ['GET'])]
     public function getBook(int $id, BookRepository $bookRepository): Response
     {
         $book = $bookRepository->find($id);
@@ -69,6 +69,6 @@ class ApiBookController extends AbstractController
     public function updateBook(int $id): JsonResponse
     {
         return $this->json(['message' => 'Book updated'], 200);
-    }
+    } */
 
 }
